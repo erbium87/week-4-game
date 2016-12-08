@@ -47,7 +47,6 @@ var	randomValue = 0, //generated when game starts
 		  console.log(valueGem4);
 	
 	  $("#button1").on("click", function() {
-		//if buttons clicked then add to page compare to randomValue to keep allowing clicks
 		$(".totalGemValue").html(totalGemValue += valueGem1); 
 		console.log(totalGemValue);
 	  });
@@ -68,7 +67,7 @@ var	randomValue = 0, //generated when game starts
 	  });
 
 	  if (randomValue === totalGemValue) {
-		totalWins ++;
+		totalWins += 1;
 		$(".totalWins").html(totalWins);
 		$(".startButton").html("Start");
 		// totalGemValue = 0;
