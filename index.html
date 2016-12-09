@@ -4,7 +4,7 @@
 	<title>Crystals</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 <div class = "container">
   <div class = "row">
-  	<div class = "col-xs-6">
+  	<div class = "col-xs-6 rules">
   	<p>You will be given a random number at the start of the game.</p>
   	<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
   	<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
@@ -31,11 +31,11 @@
     <div class = "col-xs-4">
     	<button type="button" class="btn btn-success startButton">Start</button>
 
-    	<p class = "randomValue"></p>
+    	<p class = "randomValue bolded"></p>
 	</div>
 	<div class = "col-xs-4">
-		<p class = "totalWins">Wins:</p>
-		<p class = "totalLosses">Losses:</p>
+		<p class = "totalWins bolded">Wins:</p>
+		<p class = "totalLosses bolded">Losses:</p>
     </div>
   </div>
 
@@ -52,14 +52,14 @@
 
   <div class = "row">
 	<div class = "col-xs-6">
-		<p>Your total score is:</p>
-		<p class = "totalGemValue"></p>
+		<p class = "rules">Your Current Gem Count is:</p>
+		<p class = "totalGemValue bolded"></p>
 	</div>
   </div>
 
   <div class = "row">
   	<div class = "col-xs-6">
-  		<p class = "currentValue"></p>
+  		<p class = "currentValue bolded"></p>
   	</div>
   </div>
 </div>

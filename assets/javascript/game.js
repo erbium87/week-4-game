@@ -17,7 +17,7 @@
 	// with second and continued clicks it add to value of clicks
 $(document).ready(function() {
 
-var	randomValue = 0, //generated when game starts
+var	randomValue = 0, //generated to page when game starts
 	valueGem1 = 0, // value assigned to gem
 	valueGem2 = 0,
 	valueGem3 = 0,
@@ -25,10 +25,10 @@ var	randomValue = 0, //generated when game starts
 	totalGemValue = 0, // total for a given game
 	totalWins = 0,
 	totalLosses = 0;
+	game = false;
 
 	
 	$(".startButton").on("click", function(){  
-		// $(document).keyup(function() {
 		$(".startButton").html("Restart");
 
 		randomValue = Math.floor(Math.random() * 101 + 19);
@@ -45,45 +45,54 @@ var	randomValue = 0, //generated when game starts
 
 		valueGem4 = Math.floor(Math.random() * 12 + 1);
 		  console.log(valueGem4);
+
+    }); //end of start button 
 	
+
 	  $("#button1").on("click", function() {
 		$(".totalGemValue").html(totalGemValue += valueGem1); 
+	  	status ();
 		console.log(totalGemValue);
 	  });
 
 	  $("#button2").on("click", function() {
 		$(".totalGemValue").html(totalGemValue += valueGem2); 
+		status ();
 		console.log(totalGemValue);
 	  });
 
 	  $("#button3").on("click", function() {
 		$(".totalGemValue").html(totalGemValue += valueGem3); 
+		status ();
 		console.log(totalGemValue);
 	  });
 
 	  $("#button4").on("click", function() {
 		$(".totalGemValue").html(totalGemValue += valueGem4); 
+		status ();
 		console.log(totalGemValue);
 	  });
 
-	  if (randomValue === totalGemValue) {
-		totalWins += 1;
-		$(".totalWins").html(totalWins);
+	function status () {
+	  if (totalGemValue === randomValue) {
+		$(".totalWins").html("Wins: " + (totalWins +=1));
+		console.log(totalWins);
 		$(".startButton").html("Start");
-		// totalGemValue = 0;
+		totalGemValue = 0;
+		$(".totalGemValue, .randomValue").empty();
 		alert ("You Win!");
-	  } else if (randomValue < totalGemValue){
+	  } 
+	  else if (totalGemValue > randomValue){
+		$(".totalLosses").html("Losses: " + (totalLosses +=1));
+		console.log(totalLosses);
+	  	$(".startButton").html("Start");
+	  	totalGemValue = 0;
+	  	$(".totalGemValue, .randomValue").empty();
 	  	alert("You lose!");
-	  } else {
+	  } 
+	  else {
 
 	  }
-
-	 //  if (totalGemValue > randomValue){
-		// totalLosses ++;
-		// $("totalLosses").html(totalLosses);
-		// alert ("You Lose!");
-		// totalGemValue = 0;
-	 //  }
+  	}//end of status function 
 	
-  }); //end of start button // end of key up function
 }); //end of main function
